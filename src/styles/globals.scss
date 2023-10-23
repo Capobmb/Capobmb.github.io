@@ -1,0 +1,110 @@
+:root {
+  --white: #ffffff;
+  --gray-10: #eeeeee;
+  --gray-25: #aaaaaa;
+  --gray-50: #707070;
+  --gray-75: #444444;
+  --black: #222222;
+
+  --orange: #d94f21;
+  --rose: #fdefec;
+  --latte: #fff4e0;
+  --lightgreen: #e7f5c4;
+  --lightorange: #feead4;
+  --pink: #f58e6b;
+  --brownleaf: #c4545d;
+  --blue: #3891a6;
+  --green: #408b18;
+
+  --body: clamp(1rem, 0.95rem + 0.2vw, 1.125rem); /* 16-18px */
+  --display: clamp(2rem, 1rem + 5vw, 5rem); /* 72-160 320-1280 */
+  --heading1: clamp(1.5rem, 1rem + 2.5vw, 3rem); /* 24-48px, 320-1280 */
+  --heading2: clamp(
+    1.25rem,
+    0.96rem + 1.46vw,
+    2.125rem
+  ); /* 20-34px, 320-1280 */
+  --heading3: calc(var(--body) * 1.2); /* 19.2-21.6px */
+  --heading4: calc(var(--body) * 1.1); /* 17.6-19.8px */
+  --heading5: calc(var(--body) * 1); /* 16-18px */
+  --small-heading2: clamp(0.875rem, 4vw - 1rem, 1.6875rem); /* 14-27px */
+  --small-heading3: calc(var(--small-heading2) * 0.86); /* 12-23px */
+
+  --space-xs: clamp(1.25rem, 1rem + 0.98vw, 1.875rem); /* 20-30px */
+  --space-sm: calc(var(--space-xs) * 1.5); /* 30-45px */
+  --space-md: calc(var(--space-xs) * 2); /* 40-60px */
+  --space-lg: calc(var(--space-xs) * 3); /* 60-90px */
+  --space-xl: calc(var(--space-xs) * 4); /* 80-120px */
+  --space-jump: clamp(1.25rem, 0.35rem + 3.8vw, 3.75rem); /* 20-60px */
+
+  /* font-family */
+  --font-rg: "Noto Sans JP", "Gill Sans", "Gill Sans MT", Calibri,
+    "Trebuchet MS", sans-serif;
+  --font-sb: "Noto Sans JP", "Gill Sans", "Gill Sans MT", Calibri,
+    "Trebuchet MS", sans-serif;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap");
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body {
+  color: var(--black);
+  font-family: var(--font-rg);
+  font-size: var(--body);
+  line-height: 1.25em;
+}
+
+/* margin-top of heading as first children must be 0 */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin-top: var(--heading2);
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+h1 {
+  font-size: var(--heading1);
+  line-height: 1.2em;
+}
+
+h2 {
+  font-size: var(--heading2);
+}
+
+h3 {
+  font-size: var(--heading3);
+}
+
+h4 {
+  font-size: var(--heading4);
+  text-decoration: underline dashed;
+}
+
+h5 {
+  font-size: var(--heading5);
+}
+
+p {
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+}
+
+a {
+  color: var(--blue);
+  text-decoration: none;
+  transition: 0.15s;
+
+  &:hover {
+    color: var(--gray-50);
+  }
+}
