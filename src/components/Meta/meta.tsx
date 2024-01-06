@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 // import siteImg from "images/others/logo.png";
 
 export default function Meta({
+  pageTitle,
   pageDesc,
   pageImg,
   pageImgW,
@@ -19,15 +20,13 @@ export default function Meta({
 }) {
   const { siteTitle, siteDesc, siteUrl, siteLocale, siteType, siteIcon } =
     siteMeta;
-  const title = "Capo's Portfolio";
+  const title = pageTitle ? `${pageTitle} | ${siteTitle}` : siteTitle;
   const desc = pageDesc ?? siteDesc;
+  const img = pageImg ?? siteIcon.src;
+  const imgW = pageImgW ?? siteIcon.width.toString();
+  const imgH = pageImgH ?? siteIcon.height.toString();
   const router = useRouter();
   const url = `${siteUrl}${router.asPath}`;
-
-  // const img = pageImg || siteImg.src;
-  // const imgW = pageImgW || siteImg.width.toString();
-  // const imgH = pageImgH || siteImg.height.toString();
-  // const imgUrl = img.startsWith("https") ? img : `${siteUrl}${img}`;
 
   return (
     <Head>
@@ -36,6 +35,7 @@ export default function Meta({
       <link rel="canonical" href={url} />
       <link rel="icon" href={siteIcon.src} />
       <link rel="apple-touch-icon" href={siteIcon.src} />
+      <title>{title}</title>
 
       <meta property="og:title" content={title} />
       <meta property="og:description" content={desc} />
@@ -44,9 +44,9 @@ export default function Meta({
       <meta property="og:type" content={siteType} />
       <meta property="og:locale" content={siteLocale} />
 
-      {/* <meta property="og:image" content={imgUrl} />
+      <meta property="og:image" content={img} />
       <meta property="og:image:width" content={imgW} />
-      <meta property="og:image:height" content={imgH} /> */}
+      <meta property="og:image:height" content={imgH} />
       <meta name="twitter:card" content="summary_large_image" />
     </Head>
   );

@@ -3,19 +3,12 @@ import Image from "next/image";
 import { StaticImageData } from "next/image";
 
 export default function Hero({
-  pageTitle,
   imageSrc,
 }: {
-  pageTitle?: string;
   imageSrc?: StaticImageData | string;
 }) {
   return (
     <>
-      <Head>
-        <title>
-          {pageTitle ? `${pageTitle} - Capo's Portfolio` : "Capo's Portfolio"}
-        </title>
-      </Head>
       {imageSrc && (
         <figure
           style={{
@@ -28,7 +21,7 @@ export default function Hero({
         >
           <Image
             src={imageSrc}
-            alt=""
+            alt="Hero image"
             fill
             priority
             style={{ objectFit: "cover" }}
