@@ -8,7 +8,7 @@ export default function Footer() {
         <h2>Contact me</h2>
         <ul>
           <li>
-            <Link href="https://https://github.com/Capobmb">
+            <Link href="https://github.com/Capobmb">
               Github: @Capobmb
             </Link>
           </li>
