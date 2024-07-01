@@ -17,7 +17,7 @@ export default function Footer() {
           </li>
           <li>E-mail: taip0321.h(^^)gmail.com (Replace (^^) with @)</li>
         </ul>
-        <p>This site is built by Next.js with MDX on Github Pages.</p>
+        <p>This site is built by Next.js with MDX on GitHub Pages.</p>
       </Container>
     </footer>
   );
