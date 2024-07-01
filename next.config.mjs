@@ -1,8 +1,12 @@
-const withMDX = require("@next/mdx")({
+import remarkGfm from "remark-gfm";
+import createMDX from "@next/mdx";
+
+const withMDX = createMDX({
   extension: /\.mdx?$/,
   options: {
     // If you use `MDXProvider`, uncomment the following line.
     providerImportSource: "@mdx-js/react",
+    remarkPlugins: [remarkGfm],
   },
 });
 
@@ -15,4 +19,4 @@ const nextConfig = {
   images: { unoptimized: true },
 };
 
-module.exports = withMDX(nextConfig);
+export default withMDX(nextConfig);
