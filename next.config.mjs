@@ -14,6 +14,9 @@ const withMDX = createMDX({
 const nextConfig = {
   // Configure pageExtensions to include md and mdx
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
+  webpack(config, options) {
+    return config;
+  },
   reactStrictMode: true,
   output: "export",
   images: { unoptimized: true },
