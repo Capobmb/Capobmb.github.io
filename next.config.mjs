@@ -1,4 +1,6 @@
-const withMDX = require("@next/mdx")({
+import createMDX from "@next/mdx";
+
+const withMDX = createMDX({
   extension: /\.mdx?$/,
   options: {
     // If you use `MDXProvider`, uncomment the following line.
@@ -15,4 +17,4 @@ const nextConfig = {
   images: { unoptimized: true },
 };
 
-module.exports = withMDX(nextConfig);
+export default withMDX(nextConfig);
