@@ -22,9 +22,9 @@ export default function Meta({
     siteMeta;
   const title = pageTitle ? `${pageTitle} | ${siteTitle}` : siteTitle;
   const desc = pageDesc ?? siteDesc;
-  const img = pageImg ?? siteIcon.src;
-  const imgW = pageImgW ?? siteIcon.width.toString();
-  const imgH = pageImgH ?? siteIcon.height.toString();
+  const img = pageImg ?? siteIcon;
+  // const imgW = pageImgW ?? siteIcon.width.toString();
+  // const imgH = pageImgH ?? siteIcon.height.toString();
   const router = useRouter();
   const url = `${siteUrl}${router.asPath}`;
 
@@ -33,8 +33,8 @@ export default function Meta({
       <meta charSet="utf-8" />
       <meta name="description" content={desc} />
       <link rel="canonical" href={url} />
-      <link rel="icon" href={siteIcon.src} />
-      <link rel="apple-touch-icon" href={siteIcon.src} />
+      <link rel="icon" href={siteIcon} />
+      <link rel="apple-touch-icon" href={siteIcon} />
       <title>{title}</title>
 
       <meta property="og:title" content={title} />
@@ -45,8 +45,8 @@ export default function Meta({
       <meta property="og:locale" content={siteLocale} />
 
       <meta property="og:image" content={img} />
-      <meta property="og:image:width" content={imgW} />
-      <meta property="og:image:height" content={imgH} />
+      {/* <meta property="og:image:width" content={imgW} /> */}
+      {/* <meta property="og:image:height" content={imgH} /> */}
       <meta name="twitter:card" content="summary_large_image" />
     </Head>
   );
